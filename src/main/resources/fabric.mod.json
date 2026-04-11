@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "overture",
+	"version": "${version}",
+	"name": "Overture",
+	"description": "Overly customizable playing media overlay.",
+	"authors": [
+		{
+			"name": "sylvxa",
+			"contact": {
+				"email": "me@sylvie.lol",
+				"homepage": "https://sylvie.lol"
+			}
+		}
+	],
+	"contact": {
+		"repo": "https://github.com/sylvxa/overture",
+		"homepage": "https://modrinth.com/project/overture",
+		"issues": "https://github.com/sylvxa/overture/issues",
+		"discord": "https://discord.gg/5qzrB98sBA"
+	},
+	"license": "MIT",
+	"icon": "assets/overture/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"lol.sylvie.overture.Overture"
+		],
+		"modmenu": [
+			"lol.sylvie.overture.config.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"overture.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.6",
+		"minecraft": ">=26.1",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

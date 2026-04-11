@@ -1,0 +1,105 @@
+{
+  "overture.name": "Overture",
+
+  "key.category.overture.keybinds": "Overture",
+  "key.overture.config": "Open Configuration",
+  "key.overture.refresh": "Force Track Refresh",
+  "message.overture.refreshed": "Refreshed track!",
+
+  "overture.position.top.horizontal": "Left",
+  "overture.position.bottom.horizontal": "Right",
+  "overture.position.top.vertical": "Top",
+  "overture.position.bottom.vertical": "Bottom",
+  "overture.position.center": "Center",
+
+  "overture.backend.mpris": "MPRIS (Linux)",
+  "overture.backend.mpris.description": "Uses the D-Bus MPRIS API to fetch currently playing media. (Recommended)",
+
+  "overture.backend.lastfm": "last.fm",
+  "overture.backend.lastfm.description": "Uses the last.fm API to get the song that's currently playing. (Requires setup, supports Spotify!)",
+
+  "overture.lastfm.setup": "Last.fm Setup",
+  "overture.lastfm.account": "If you don't already have one, make an account at %s.",
+  "overture.lastfm.api_account": "Afterwards, make an API account at %s. (set the application name and description to whatever you want, just be descriptive)",
+  "overture.lastfm.input_api": "Once you've done that, come back here and fill out these boxes:",
+
+  "error.overture.lastfm.auth": "Could not get authentication token!",
+
+  "overture.lastfm.authorization": "Authorize your Last.fm account by going to the portal found at the buttons below",
+
+  "overture.lastfm.link_platforms": "Link your Spotify account at %s (unless you are using another service)",
+  "overture.lastfm.set_spotify": "After you've done that, go to %s and set the \"Playback source\" to Spotify (don't worry about the Premium bit)",
+
+  "overture.lastfm.api_key": "API Key",
+  "overture.lastfm.username": "Username",
+
+  "config.overture.general": "General",
+  "config.overture.general.tooltip": "Settings relating to the functionality of Overture itself",
+
+  "config.overture.general.retrieval": "Retrieval",
+  "config.overture.general.retrieval.description": "How Overture should get track data",
+
+  "config.overture.general.retrieval.backend": "Retrieval Backend",
+  "config.overture.general.retrieval.backend.description": "The platform or interface that the currently playing track will be taken from.",
+  "config.overture.general.retrieval.interval": "Checking Interval",
+  "config.overture.general.retrieval.interval.description": "How often the currently playing track should be updated",
+  "config.overture.general.retrieval.smart_checking": "Smart Checking",
+  "config.overture.general.retrieval.smart_checking.description": "Only check on the above interval when the window is unfocused, otherwise use the music duration to check after each track is done",
+
+  "config.overture.general.lastfm": "last.fm",
+  "config.overture.general.lastfm.description": "Options/credentials for the last.fm backend",
+
+  "config.overture.general.lastfm.open_onboarding": "Open Setup Wizard",
+  "config.overture.general.lastfm.open_onboarding.description": "Open the step-by-step guide for setting up Overture with last.fm",
+
+  "config.overture.appearance": "Appearance",
+  "config.overture.appearance.tooltip": "How the HUD widgets should appear",
+
+  "config.overture.appearance.colors": "Colors",
+  "config.overture.appearance.colors.description": "Which colors the HUD widgets should use",
+
+  "config.overture.appearance.colors.background": "Background Color",
+  "config.overture.appearance.colors.background.description": "Background color of the HUD",
+  "config.overture.appearance.colors.title": "Title Text Color",
+  "config.overture.appearance.colors.title.description": "The text color of the track name",
+  "config.overture.appearance.colors.artist": "Artist Text Color",
+  "config.overture.appearance.colors.artist.description": "The text color of the track's artist",
+  "config.overture.appearance.colors.progress": "Current Progress Text Color",
+  "config.overture.appearance.colors.progress.description": "The text color of the elapsed track time (on the left)",
+  "config.overture.appearance.colors.duration": "Duration Color",
+  "config.overture.appearance.colors.duration.description": "The text color of the track duration (on the right)",
+  "config.overture.appearance.colors.progress_background": "Progress Bar Background",
+  "config.overture.appearance.colors.progress_background.description": "The color of the unfilled portion of the progress bar",
+  "config.overture.appearance.colors.progress_foreground": "Progress Bar Foreground",
+  "config.overture.appearance.colors.progress_foreground.description": "The color of the filled portion of the progress bar",
+
+  "config.overture.appearance.position": "Positioning",
+  "config.overture.appearance.position.description": "Where/how big HUD elements should appear",
+
+  "config.overture.appearance.position.x_anchor": "Horizontal Anchor",
+  "config.overture.appearance.position.x_anchor.description": "Where the horizontal position should be based on",
+  "config.overture.appearance.position.y_anchor": "Vertical Anchor",
+  "config.overture.appearance.position.y_anchor.description": "Where the vertical position should be based on",
+  "config.overture.appearance.position.x_offset": "Horizontal Offset",
+  "config.overture.appearance.position.x_offset.description": "How many pixels the HUD should be shifted horizontally",
+  "config.overture.appearance.position.y_offset": "Vertical Offset",
+  "config.overture.appearance.position.y_offset.description": "How many pixels the HUD should be shifted vertically",
+  "config.overture.appearance.position.width": "Maximum Width",
+  "config.overture.appearance.position.width.description": "The maximum width of the HUD element (0 = auto)",
+  "config.overture.appearance.position.scale": "Scale",
+  "config.overture.appearance.position.scale.description": "Scaling factor for the entire HUD",
+  "config.overture.appearance.position.padding": "Padding",
+  "config.overture.appearance.position.padding.description": "How many pixels should surround each side of the HUD",
+
+  "config.overture.appearance.tweaks": "Tweaks",
+  "config.overture.appearance.tweaks.description": "Miscellaneous changes to how the HUD behaves",
+
+  "config.overture.general.tweaks.prefer_album_name": "Prefer Album Name",
+  "config.overture.general.tweaks.prefer_album_name.description": "Prefer the album name to the artist name in the secondary text field",
+
+  "config.overture.general.tweaks.image_on_right": "Image Side",
+  "config.overture.general.tweaks.image_on_right.description": "Which side the track image should appear on",
+
+  "config.overture.general.tweaks.ignore_gui_scale": "Ignore GUI Scale",
+  "config.overture.general.tweaks.ignore_gui_scale.description": "Reverses the vanilla GUI scale"
+}
