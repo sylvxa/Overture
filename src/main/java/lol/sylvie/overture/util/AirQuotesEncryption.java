@@ -13,6 +13,8 @@ import java.nio.charset.StandardCharsets;
  * This isn't meant for security!
  *
  * This is mainly to stop weird mods or silly modpack makers from syncing the file for whatever reason and having other clients pick it up.
+ *
+ * 04/21/26 - this isn't used currently as I scrapped Last.fm integration
  */
 public class AirQuotesEncryption {
     private static String KEY;

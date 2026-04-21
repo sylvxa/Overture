@@ -1,10 +1,8 @@
 package lol.sylvie.overture.backend;
 
 import com.mojang.blaze3d.platform.NativeImage;
-import lol.sylvie.overture.backend.impl.LastFmRetriever;
 import lol.sylvie.overture.backend.impl.MPRISRetriever;
 import lol.sylvie.overture.config.Configuration;
-import lol.sylvie.overture.config.lastfm.LastFmAccount;
 import lol.sylvie.overture.hud.HudHandler;
 import lol.sylvie.overture.util.Constants;
 import net.minecraft.client.Minecraft;
@@ -12,7 +10,6 @@ import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.network.chat.Component;
 import org.jspecify.annotations.NonNull;
-
 import javax.imageio.ImageIO;
 import javax.imageio.stream.ImageOutputStream;
 import java.awt.image.BufferedImage;
@@ -26,7 +23,6 @@ import java.util.Objects;
 public class RetrievalHandler {
     public enum Type {
         MPRIS(Component.translatable("overture.backend.mpris"), Component.translatable("overture.backend.mpris.description"));
-        //LASTFM(Component.translatable("overture.backend.lastfm"), Component.translatable("overture.backend.lastfm.description"));
 
         public Component getTitle() {
             return title;
@@ -61,11 +57,6 @@ public class RetrievalHandler {
     }
 
     public static final MPRISRetriever MPRIS = register(new MPRISRetriever());
-
-    // Last.fm might be viable with more hacks, but I think native options are fine for now.
-    //public static final LastFmRetriever LASTFM = Objects.requireNonNull(
-    //        register(new LastFmRetriever())
-    //);
 
     // Actually fetching
     public static Thread THREAD;
@@ -154,13 +145,7 @@ public class RetrievalHandler {
     }
 
     public static void init() {
-        //LASTFM.account = LastFmAccount.load();
-
-        THREAD = new Thread(() -> {
-            Constants.LOGGER.info("Starting retrieval thread");
-            run();
-            Constants.LOGGER.info("Closing retrieval thread");
-        }, "Overture-Fetching");
+        THREAD = new Thread(RetrievalHandler::run, "Overture-Fetching");
         THREAD.start();
     }
 

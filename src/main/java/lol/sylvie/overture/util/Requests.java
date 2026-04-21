@@ -8,32 +8,10 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.HexFormat;
-import java.util.Map;
 
 import static lol.sylvie.overture.util.Constants.GSON;
 
 public class Requests {
-    public static String generateLastFmSignature(Map<String, String> parameters) {
-        StringBuilder builder = new StringBuilder();
-        for (String key : parameters.keySet().stream().sorted().toList()) {
-            builder.append(key);
-            builder.append(parameters.get(key));
-        }
-
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] digest = md.digest(builder.toString().getBytes(StandardCharsets.UTF_8));
-
-           return HexFormat.of().formatHex(digest);
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     /*
      * Returns either the proper JSON object or an error message
      */

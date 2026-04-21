@@ -9,7 +9,6 @@ import dev.isxander.yacl3.gui.controllers.cycling.CyclingListController;
 import lol.sylvie.overture.backend.MetadataRetriever;
 import lol.sylvie.overture.backend.RetrievalHandler;
 import lol.sylvie.overture.backend.impl.MPRISRetriever;
-import lol.sylvie.overture.config.lastfm.LastFmSetup;
 import lol.sylvie.overture.config.type.BackendTypeAdapter;
 import lol.sylvie.overture.util.Anchor;
 import lol.sylvie.overture.util.Constants;
@@ -156,22 +155,6 @@ public class Configuration {
                 .build());
 
         generalCategory.group(retrievalSettings.build());
-
-        OptionGroup.Builder lastfmDetails = OptionGroup.createBuilder()
-                .name(Component.translatable("config.overture.general.lastfm"))
-                .description(OptionDescription.of(Component.translatable("config.overture.general.lastfm.description")));
-
-        lastfmDetails.option(ButtonOption.createBuilder()
-                .name(Component.translatable("config.overture.general.lastfm.open_onboarding"))
-                .description(OptionDescription.of(Component.translatable("config.overture.general.lastfm.open_onboarding.description")))
-                .action((screen, button) -> {
-                    if (screen.pendingChanges())
-                        screen.finishOrSave();
-                    Minecraft.getInstance().setScreen(new LastFmSetup(screen));
-                })
-                .build());
-
-        generalCategory.groupIf(this.metadataRetriever.getType() == RetrievalHandler.Type.LASTFM, lastfmDetails.build());
 
         builder.category(generalCategory.build());
 
