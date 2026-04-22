@@ -11,8 +11,6 @@ import static lol.sylvie.overture.util.Constants.LOGGER;
 public class Overture implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-		LOGGER.info("the Overture is my favorite part of every musical");
-
 		Configuration.HANDLER.load();
 
 		RetrievalHandler.init();

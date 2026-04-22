@@ -28,7 +28,7 @@ public class WinRTRetriever extends MetadataRetriever {
         super(RetrievalHandler.Type.WINRT);
         if (isAvailable())
             try {
-                File extractedFile = Native.extractFromResourcePath("natives/overture-windows-retriever.dll");
+                File extractedFile = Native.extractFromResourcePath("natives/overture/overture-windows-retriever.dll");
                 System.setProperty("jna.library.path", extractedFile.getParent());
                 library = Native.load(extractedFile.getAbsolutePath(), IWindowsRetriever.class);
             } catch (IOException exception) {

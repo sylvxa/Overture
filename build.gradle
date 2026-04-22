@@ -69,6 +69,23 @@ java {
 	targetCompatibility = JavaVersion.VERSION_25
 }
 
+tasks.register('copyWindowsNative', Copy) {
+	from "${projectDir}/overture-windows-retriever/x64/Release"
+	into "${projectDir}/src/main/resources/natives/overture"
+	include 'overture-windows-retriever.dll'
+}
+
+tasks.register('compileWindowsNative', Exec) {
+	workingDir "${projectDir}/overture-windows-retriever"
+	commandLine 'msbuild', 'overture-windows-retriever.slnx', '/p:Configuration=Release', '/p:Platform=x64', '/t:Rebuild'
+	ignoreExitValue = true
+
+	onlyIf {
+		return ['where', 'msbuild'].execute().waitFor() == 0
+	}
+
+	finalizedBy('copyWindowsNative')
+}
 jar {
 	inputs.property "archivesName", project.base.archivesName
 
