@@ -1,5 +1,6 @@
 package lol.sylvie.overture.backend;
 
+import lol.sylvie.overture.backend.art.ArtProvider;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
@@ -55,11 +56,9 @@ public abstract class MetadataRetriever {
      * @param name the track's name
      * @param artist the track's artist
      * @param album the track's album
-     * @param artUrl the location of the track's art; either http://, https://, or file://
+     * @param art the track's thumbnail
      * @param duration the track's duration, in milliseconds.
      * @param current how far into the track the user is, or at least a guess
      */
-    public record Result(@NonNull String name, String artist, String album, @Nullable String artUrl, long duration, long current) {};
-
-
+    public record Result(@NonNull String name, String artist, String album, @Nullable ArtProvider art, long duration, long current) {};
 }

@@ -7,6 +7,7 @@ import lol.sylvie.overture.backend.RetrievalHandler;
 import lol.sylvie.overture.config.Configuration;
 import lol.sylvie.overture.util.Constants;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -127,6 +128,6 @@ public class HudHandler {
     }
 
     public static void init() {
-        HudElementRegistry.addLast(ID, HudHandler::render);
+        HudElementRegistry.attachElementAfter(VanillaHudElements.SUBTITLES, ID, HudHandler::render);
     }
 }

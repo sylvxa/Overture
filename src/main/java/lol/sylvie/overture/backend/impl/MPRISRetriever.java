@@ -2,6 +2,7 @@ package lol.sylvie.overture.backend.impl;
 
 import lol.sylvie.overture.backend.MetadataRetriever;
 import lol.sylvie.overture.backend.RetrievalHandler;
+import lol.sylvie.overture.backend.art.URLArt;
 import lol.sylvie.overture.util.Constants;
 import org.apache.commons.lang3.SystemUtils;
 import org.freedesktop.dbus.connections.impl.DBusConnection;
@@ -64,7 +65,7 @@ public class MPRISRetriever extends MetadataRetriever {
             long length = (Long) metadata.get("mpris:length") / 1000;
             long position = ((Long) player.Get(INTERFACE_NAME, "Position")) / 1000; // DBus returns Us, we want ms
 
-            return new Result(title, artist, album, artUrl, length, position);
+            return new Result(title, artist, album, new URLArt(artUrl), length, position);
         } catch (DBusException e) {
             Constants.LOGGER.error("Couldn't retrieve MPRIS data!", e);
             return null;

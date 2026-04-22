@@ -19,6 +19,6 @@ public class BackendTypeAdapter extends TypeAdapter<MetadataRetriever> {
         String name = in.nextString();
         RetrievalHandler.Type type = RetrievalHandler.Type.valueOf(name);
 
-        return RetrievalHandler.getBackends().getOrDefault(type, RetrievalHandler.MPRIS);
+        return RetrievalHandler.getBackends().getOrDefault(type, RetrievalHandler.getUsableRetriever());
     }
 }

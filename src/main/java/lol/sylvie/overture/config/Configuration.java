@@ -40,7 +40,7 @@ public class Configuration {
     // General settings
     // Retrieval
     @SerialEntry(comment = "The method in which Overture will get the currently playing track.")
-    public MetadataRetriever metadataRetriever = new MPRISRetriever();
+    public MetadataRetriever metadataRetriever = RetrievalHandler.getUsableRetriever();
 
     @SerialEntry(comment = "How often the currently playing track should be updated (in seconds)")
     public float interval = 5f;
