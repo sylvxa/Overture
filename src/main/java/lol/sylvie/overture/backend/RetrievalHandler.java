@@ -67,7 +67,7 @@ public class RetrievalHandler {
 
     public static MetadataRetriever getUsableRetriever() {
         for (MetadataRetriever retriever : BACKENDS.values()) {
-            if (retriever.isAvailable()) return retriever;
+            if (retriever.isAvailable() && retriever != DUMMY) return retriever;
         }
         return DUMMY;
     }

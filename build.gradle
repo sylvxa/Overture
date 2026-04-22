@@ -43,8 +43,8 @@ dependencies {
 	implementation("com.terraformersmc:modmenu:${project.mod_menu_version}")
 
 	// Used for the MPRIS backend
-	implementation "com.github.hypfvieh:dbus-java-core:${project.java_dbus_version}"
-	implementation "com.github.hypfvieh:dbus-java-transport-native-unixsocket:${project.java_dbus_version}"
+	include implementation("com.github.hypfvieh:dbus-java-core:${project.java_dbus_version}")
+	include implementation("com.github.hypfvieh:dbus-java-transport-native-unixsocket:${project.java_dbus_version}")
 }
 
 processResources {
