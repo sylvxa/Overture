@@ -61,7 +61,6 @@ public class HudHandler {
         if (result == null) return;
 
         Minecraft minecraft = Minecraft.getInstance();
-        //if (minecraft.getDebugOverlay().showDebugScreen()) return;
 
         Configuration config = Configuration.HANDLER.instance();
         Window window = minecraft.getWindow();

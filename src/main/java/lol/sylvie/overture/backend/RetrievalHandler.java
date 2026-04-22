@@ -1,27 +1,15 @@
 package lol.sylvie.overture.backend;
 
-import com.mojang.blaze3d.platform.NativeImage;
-import lol.sylvie.overture.backend.art.ArtProvider;
 import lol.sylvie.overture.backend.impl.DummyRetriever;
 import lol.sylvie.overture.backend.impl.MPRISRetriever;
 import lol.sylvie.overture.backend.impl.WinRTRetriever;
 import lol.sylvie.overture.config.Configuration;
-import lol.sylvie.overture.hud.HudHandler;
 import lol.sylvie.overture.util.Constants;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.network.chat.Component;
-import org.jspecify.annotations.NonNull;
-import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageOutputStream;
-import java.awt.image.BufferedImage;
+
 import java.io.*;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.HashMap;
-import java.util.Objects;
 
 public class RetrievalHandler {
     public enum Type {
