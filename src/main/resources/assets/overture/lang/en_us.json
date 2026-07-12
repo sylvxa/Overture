@@ -32,7 +32,7 @@
   "config.overture.general.retrieval.interval": "Checking Interval",
   "config.overture.general.retrieval.interval.description": "How often the currently playing track should be updated",
   "config.overture.general.retrieval.smart_checking": "Smart Checking",
-  "config.overture.general.retrieval.smart_checking.description": "Only check on the above interval when the window is unfocused, otherwise use the music duration to check after each track is done",
+  "config.overture.general.retrieval.smart_checking.description": "Refresh at the above interval, and also when a focused track is expected to end.",
 
   "config.overture.appearance": "Appearance",
   "config.overture.appearance.tooltip": "How the HUD widgets should appear",

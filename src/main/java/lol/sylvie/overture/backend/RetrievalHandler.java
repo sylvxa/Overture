@@ -85,9 +85,11 @@ public class RetrievalHandler {
                 if (!config.metadataRetriever.isAvailable() || !config.metadataRetriever.isSetUp()) continue;
 
                 MetadataRetriever.Result previousResult = RESULT;
-                long nextCheck = (config.smartChecking && minecraft.isWindowActive() && previousResult != null) ?
-                        ((lastFetch - previousResult.current()) + previousResult.duration()) + 1000L : // 1s buffer for loading time
-                        (lastFetch + (long) (config.interval * 1000L));
+                long nextCheck = lastFetch + (long) (config.interval * 1000L);
+                if (config.smartChecking && minecraft.isWindowActive() && previousResult != null) {
+                    // Media can be paused externally, so never wait until the estimated track end alone.
+                    nextCheck = Math.min(nextCheck, ((lastFetch - previousResult.current()) + previousResult.duration()) + 1000L);
+                }
                 long currentTime = System.currentTimeMillis();
 
                 if (currentTime < nextCheck) continue;
@@ -111,10 +113,12 @@ public class RetrievalHandler {
 
     public static void init() {
         THREAD = new Thread(RetrievalHandler::run, "Overture-Fetching");
+        THREAD.setDaemon(true);
         THREAD.start();
     }
 
     public static void close() {
         closing = true;
+        THREAD.interrupt();
     }
 }

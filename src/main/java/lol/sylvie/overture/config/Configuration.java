@@ -43,7 +43,7 @@ public class Configuration {
     @SerialEntry(comment = "How often the currently playing track should be updated (in seconds)")
     public float interval = 5f;
 
-    @SerialEntry(comment = "Only check on the above interval when the window is unfocused, otherwise use the music duration to check after each track is done.")
+    @SerialEntry(comment = "Refresh at the above interval, and also when a focused track is expected to end.")
     public boolean smartChecking = true;
 
     // Appearance Settings
